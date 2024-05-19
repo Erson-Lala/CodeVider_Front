@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';
+import AnimalGallery from './components/AnimalGallery/AnimalGallery';
+import AdminPage from './components/AdminPage/AdminPage';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/cats" element={<AnimalGallery animalType="cats" />} />
+                    <Route path="/dogs" element={<AnimalGallery animalType="dogs" />} />
+                    <Route path="/birds" element={<AnimalGallery animalType="birds" />} />
+                    <Route path="/admin" element={<AdminPage />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
 export default App;
