@@ -73,7 +73,7 @@
       position: absolute;
       width: 100px;
       height: 100px;
-      background-color: #007bff;
+      background-color: #054660;
       color: #fff;
       border-radius: 50%;
       display: flex;
@@ -84,7 +84,7 @@
       text-decoration: none;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #2382a8;
         transform: scale(1.2);
         z-index: 1;
       }
@@ -159,7 +159,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(45deg, #007bff, #00bfff, transparent);
+      background: linear-gradient(45deg, #838383, #a3a3a3, transparent);
       animation: rotateBackground 10s linear infinite;
       z-index: 0;
     }
