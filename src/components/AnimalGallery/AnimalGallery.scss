@@ -1,88 +1,50 @@
 .animal-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-  
-    .animal-card {
-      background-color: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+  }
+
+  .search-input {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 300px;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 150px;
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-  
-      img {
-        max-width: 100%;
-        border-radius: 4px;
-      }
-  
-      h2 {
-        font-size: 1.1rem;
-        color: #333;
-      }
-  
-      p {
-        font-size: 0.9rem;
-        color: #666;
-      }
-  
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-    }
-  
-    .animal-details {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      border-radius: 4px;
+  }
+
+  .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+  }
+
+  .card {
       background-color: #fff;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 300px;
+      border-radius: 4px;
       padding: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
-  
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #ff5c5c;
-        border: none;
-        color: #fff;
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        font-size: 1rem;
-        line-height: 25px;
-        text-align: center;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #ff0000;
-        }
-      }
-  
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
       img {
-        max-width: 100%;
-        border-radius: 4px;
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
       }
-  
+
       h2 {
-        font-size: 1.5rem;
-        color: #333;
+          font-size: 1.2rem;
+          margin: 0.5rem 0;
       }
-  
+
       p {
-        font-size: 1rem;
-        color: #666;
+          font-size: 1rem;
+          color: #666;
       }
-    }
   }
-  
+}
