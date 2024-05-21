@@ -9,15 +9,15 @@ const AnimalGallery = ({ animalType }) => {
 
   useEffect(() => {
     const fetchAnimals = async () => {
-      const response = await axios.get(`http://localhost:5000/api/animals?type=${animalType}`);
+      const response = await axios.get('http://localhost:5000/api/animals');
       setAnimals(response.data);
     };
     fetchAnimals();
-  }, [animalType]);
+  }, []);
 
-  const filteredAnimals = animals.filter(animal =>
-    animal.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredAnimals = animals
+    .filter(animal => animal.type.toLowerCase() === animalType.toLowerCase())
+    .filter(animal => animal.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   const handleCardClick = (animal) => {
     setSelectedAnimal(animal);
