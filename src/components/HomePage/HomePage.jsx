@@ -9,7 +9,7 @@ const HomePage = () => {
         <div className="home-page">
             <div className="hero">
                 <h1>Welcome to the Pet Expo</h1>
-                <p>Your one-stop destination for everything pets!</p>
+                <p>Your gallery for all kinds of Animals</p>
             </div>
             <div className="circular-menu">
                 <div className="menu-center">Menu</div>
