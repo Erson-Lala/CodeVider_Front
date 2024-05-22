@@ -1,28 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AnimalForm.scss';
 
 const AnimalForm = ({ animal, setAnimal, refreshAnimals }) => {
   const [formData, setFormData] = useState({
-    type: animal?.type || '',
-    name: animal?.name || '',
-    origin: animal?.origin || '',
-    description: animal?.description || '',
-    image: animal?.image || '',
+    type: '',
+    name: '',
+    origin: '',
+    description: '',
+    image: '',
   });
+
+  useEffect(() => {
+    if (animal) {
+      setFormData({
+        type: animal.type || '',
+        name: animal.name || '',
+        origin: animal.origin || '',
+        description: animal.description || '',
+        image: animal.image || '',
+      });
+    }
+  }, [animal]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (animal) {
+      // Update existing animal
       await axios.put(`http://localhost:5000/api/animals/${animal._id}`, formData);
     } else {
+      // Create new animal
       await axios.post('http://localhost:5000/api/animals', formData);
     }
+    setFormData({
+      type: '',
+      name: '',
+      origin: '',
+      description: '',
+      image: '',
+    });
     setAnimal(null);
     refreshAnimals();
   };
@@ -64,9 +88,7 @@ const AnimalForm = ({ animal, setAnimal, refreshAnimals }) => {
         value={formData.image}
         onChange={handleChange}
       />
-      <div className="button-container">
-        <button type="submit">{animal ? 'Update Animal' : 'Create Animal'}</button>
-      </div>
+      <button type="submit">{animal ? 'Update Animal' : 'Create Animal'}</button>
     </form>
   );
 };
