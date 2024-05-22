@@ -9,7 +9,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
     input {
-      flex: 1 1 calc(33.3333% - 1rem); /* Adjust input width */
+      flex: 1 1 calc(33.3333% - 1rem);
       padding: 0.5rem;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -23,8 +23,8 @@
   
     .button-container {
       display: flex;
-      justify-content: center; /* Center the button */
-      width: 100%; /* Ensure the container spans full width */
+      justify-content: center;
+      width: 100%;
       margin-top: 1rem;
   
       button {

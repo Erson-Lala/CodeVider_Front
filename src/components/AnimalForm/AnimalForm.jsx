@@ -34,10 +34,8 @@ const AnimalForm = ({ animal, setAnimal, refreshAnimals }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (animal) {
-      // Update existing animal
       await axios.put(`http://localhost:5000/api/animals/${animal._id}`, formData);
     } else {
-      // Create new animal
       await axios.post('http://localhost:5000/api/animals', formData);
     }
     setFormData({
